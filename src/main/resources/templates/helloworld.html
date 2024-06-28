@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="https://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Thymeleaf Demo</title>
+    <link rel="stylesheet" th:href="@{/css/first.css}" />
+    <style>
+        back
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>Get Fit Gym</h1>
+    <p>Reach your fitness goals with us!</p>
+</header>
+
+<section class="main-content">
+    <img src="../images/gym-banner.jpeg" alt="Gym Banner" width="80%" height="auto"> <p>Join our vibrant community and achieve a healthier you! We offer a variety of fitness programs and state-of-the-art equipment to help you reach your goals. Get started today!</p>
+
+    <h2>Ready to Get Started?</h2>
+    <form th:action="@{/contact}" method="post">
+        <div class="form-group">
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name" required>
+        </div>
+        <div class="form-group">
+            <label for="email">Email Address:</label>
+            <input type="email" id="email" name="email" required>
+        </div>
+        <div class="form-group">
+            <label for="phone">Phone Number:</label>
+            <input type="tel" id="phone" name="phone"> </div>
+
+        <h3>Health Information (Optional)</h3>
+        <div class="form-group">
+            <label for="health_concerns">Do you have any health concerns you'd like to discuss?</label>
+            <textarea id="health_concerns" name="health_concerns" rows="4"></textarea>
+        </div>
+        <div class="form-group">
+            <label for="current_activity_level">What is your current activity level? (e.g., beginner, intermediate, advanced)</label>
+            <select id="current_activity_level" name="current_activity_level">
+                <option value="">Select One</option>
+                <option value="beginner">Beginner</option>
+                <option value="intermediate">Intermediate</option>
+                <option value="advanced">Advanced</option>
+            </select>
+        </div>
+
+        <h3>Gym Membership Inquiry</h3>
+        <div class="form-group">
+            <label for="membership_type">Are you interested in learning more about our membership options?</label>
+            <select id="membership_type" name="membership_type">
+                <option value="">Select One</option>
+                <option value="yes">Yes</option>
+                <option value="no">No</option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label for="preferred_contact">How would you like us to contact you? (e.g., phone, email)</label>
+            <input type="text" id="preferred_contact" name="preferred_contact">
+        </div>
+
+        <button type="submit">Contact Us</button>
+    </form>
+</section>
+
+<footer>
+    <p>&copy; Get Fit Gym. All rights reserved.</p>
+</footer>
+
+</body>
+</html>
